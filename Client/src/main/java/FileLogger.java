@@ -15,7 +15,6 @@ final String fileName;
         try (BufferedWriter br = new BufferedWriter(new FileWriter(fileName,true))) {
             br.append('\n');
             br.append(text);
-            System.out.println(text);
         }  catch (Exception exception) {
             exception.printStackTrace();
         }
