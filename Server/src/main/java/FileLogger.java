@@ -1,34 +1,33 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
-import java.time.Instant;
+
 
 public class FileLogger implements Logger{
+
 private static Logger logger=null;
+private final static String fileName = "server_logs.log";
 
     private FileLogger() {
-        String fileName = "server_logs.log";
-        try (BufferedWriter br = new BufferedWriter(new FileWriter(fileName,true))) {
-            String s;
-            while ((s = br.readLine()) != null) {
-                result += s;
-            }
-        }  catch (Exception exception) {
-            exception.printStackTrace();
-        }
-
     }
 
     @Override
     public void log(String text) {
-
+        try (BufferedWriter br = new BufferedWriter(new FileWriter(fileName,true))) {
+            br.append('\n');
+            br.append(text);
+        }  catch (Exception exception) {
+            exception.printStackTrace();
+        }
     }
 
-    @Override
-    public Logger getInstance() {
+
+    public static Logger getInstance() {
         if (logger==null){
             logger = new FileLogger();
         }
         return logger;
     }
+
+
 
 }

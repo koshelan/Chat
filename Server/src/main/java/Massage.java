@@ -2,10 +2,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Massage {
-    SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yy hh:mm a");
-    String nik;
-    Date date;
-    String text;
+    private final SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yy hh:mm a");
+    private final String nik;
+    private final Date date;
+    private final String text;
 
     public Massage(String nik, String text) {
         this.nik = nik;
