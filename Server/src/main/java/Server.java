@@ -1,92 +1,81 @@
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 
 public class Server {
-    List<ServerConnection> clients = new ArrayList<>();
+
+    public final String RESERVED_SERVER_NICK = "#SERVER#";
+
+    private final Map<String, ServerConnection> clients = new HashMap<>();
+
 
     public Server(ServerSettings serverSettings) {
-        Logger logger = Log.getInstance();
 
+        Logger logger = Log.getInstance();
+        ExecutorService executorService = Executors.newCachedThreadPool();//Runtime.getRuntime().availableProcessors());
         Socket clientSocket = null;
         try (ServerSocket serverSocket = new ServerSocket(serverSettings.getPort())) {
             logger.log("Сервер занял порт " + serverSettings.getPort() + " на машине " + serverSettings.getHost());
             end:
             while (true) {
-                    clientSocket = serverSocket.accept();
-                    ServerConnection serverConnection = new ServerConnection(clientSocket, this);
-                    clients.add(serverConnection);
-                    logger.log("Пользователь присоединился");
-                    new Thread(serverConnection).start();
+                clientSocket = serverSocket.accept();
+                ServerConnection serverConnection = new ServerConnection(clientSocket, this);
+                logger.log("Пользователь присоединился");
+                executorService.execute(serverConnection);
             }
         } catch (Exception exception) {
             exception.printStackTrace();
             logger.log(exception.getMessage());
-        }
-        finally {
+        } finally {
             try {
                 // закрываем подключение
                 clientSocket.close();
                 System.out.println("Сервер остановлен");
-            }
-            catch (IOException ex) {
+                executorService.shutdown();
+            } catch (IOException ex) {
                 ex.printStackTrace();
             }
         }
     }
 
-    public void sendMessageToAllClients(String msg) {
-        for (ServerConnection o : clients) {
-            System.out.println(msg);
-            o.sendMsg(msg);
-        }
+    //отправляем сообщение всем клентам
+    public void sendMessageToAllClients(Massage msg) {
+        MsgLog.getInstance().log(msg.toString());
+        clients.forEach((k, v) -> v.sendMsg(msg));
+    }
 
+    //отправляем сообщение конкретному кленту
+    public void sendMassageTo(Massage msg) {
+        MsgLog.getInstance().log(msg.toString());
+        clients.get(msg.getSendToNick()).sendMsg(msg);
+        clients.get(msg.getNick()).sendMsg(msg);
+    }
+
+    // добавляем пользователя в чат
+    public void addClient(String nick, ServerConnection serverConnection) {
+        clients.put(nick, serverConnection);
     }
 
     // удаляем клиента из коллекции при выходе из чата
     public void removeClient(ServerConnection client) {
-        clients.remove(client);
-        Log.getInstance().log(("клиент ушёл. осталось "+clients.size()).toString());
+        clients.remove(client.getNick());
+        Log.getInstance().log(("клиент ушёл. осталось " + clients.size()));
     }
 
+    //получаем все ники клиентов
+    public Set<String> getClientsNicks() {
+        return clients.keySet();
+    }
 
-//                    final ByteBuffer inputBuffer = ByteBuffer.allocate(2 << 10);
-//                    System.out.println("Создалось соединение");
-//                    while (socketChannel.isConnected()) {
-//                        socketChannel.write(ByteBuffer.wrap(new.getBytes(StandardCharsets.UTF_8)));
-//                        int byteCount = socketChannel.read(inputBuffer);
-//                        if (byteCount == -1) {
-//                            break;
-//                        }
-//                        inputBuffer.flip();
-//                        Massage massage = (Massage) new ObjectInputStream(
-//                                new ByteArrayInputStream(inputBuffer.array(), 0, inputBuffer.limit()))
-//                                .readObject();
-//                        System.out.println(massage);
-//                        logger.log(massage.toString());
-//
-//                        final String text = new String(inputBuffer.array(), 0, byteCount, StandardCharsets.UTF_8);
-//                        inputBuffer.clear();
-//                        System.out.println("ввод: " + text);
-//                        final String result = text.replace(" ", "");
-//                        System.out.println("вывод: " + result);
-//                        socketChannel.write(ByteBuffer.wrap(result.getBytes(StandardCharsets.UTF_8)));
-//                        if (text.equals("off")) {
-//                            break end;
-//                        }
-//
-//                    }
-//
-//                } catch (Exception e) {
-//                    System.out.println("Клиент отвалился");
-//                }
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
+    // меняем ключ у соединения с клиентом
+    public void changeClientNick(String oldNick, String newNick) {
+        clients.put(newNick, clients.get(oldNick));
+        clients.remove(oldNick);
+    }
 }

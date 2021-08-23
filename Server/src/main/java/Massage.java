@@ -1,24 +1,43 @@
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Massage {
-    private final SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yy hh:mm a");
-    private final String nik;
-    private final Date date;
-    private final String text;
+public class Massage implements Serializable {
 
-    public Massage(String nik, String text) {
-        this.nik = nik;
+    private final SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yy hh:mm a");
+    private final String nick;
+    private final String text;
+    private final String sendToNick;
+    private Date date;
+
+    public Massage(String nick, String text) {
+        this.nick = nick;
         this.date = new Date();
         this.text = text;
+        this.sendToNick = "";
     }
 
-    public String getNik() {
-        return nik;
+    public Massage(String nick, String sendToNik, String text) {
+        this.nick = nick;
+        this.date = new Date();
+        this.text = text;
+        this.sendToNick = sendToNik;
+    }
+
+    public String getSendToNick() {
+        return sendToNick;
+    }
+
+    public String getNick() {
+        return nick;
     }
 
     public Date getDate() {
         return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getText() {
@@ -27,7 +46,7 @@ public class Massage {
 
     @Override
     public String toString() {
-        return nik + "   " + formatForDateNow.format(date) +'\n'+
-                text;
+        return ("").equals(sendToNick) ? formatForDateNow.format(date) + "   " + nick + " :  " + text + '\n' :
+               formatForDateNow.format(date) + "   " + nick + " ->  " + sendToNick + " :  " + text + '\n';
     }
 }
