@@ -23,12 +23,11 @@ public class Form extends JFrame implements VisualInterface{
                     } catch (IOException ioException) {
                         ioException.printStackTrace();
                     }
-                    // фокус на текстовое поле с сообщением
                     jtfMessage.grabFocus();
                 }
             }
         };
-        // Задаём настройки элементов на форме
+
         setBounds(600, 300, 600, 500);
         setTitle("Chat");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -55,7 +54,6 @@ public class Form extends JFrame implements VisualInterface{
                     } catch (IOException ioException) {
                         ioException.printStackTrace();
                     }
-                    // фокус на текстовое поле с сообщением
                     jtfMessage.grabFocus();
                 }
             }
@@ -65,19 +63,16 @@ public class Form extends JFrame implements VisualInterface{
         add(bottomPanel, BorderLayout.SOUTH);
         JButton jbSendMessage = new JButton("Отправить");
         bottomPanel.add(jbSendMessage, BorderLayout.EAST);
-        //jtfMessage = new JTextField("Введите ваше сообщение: ");
         bottomPanel.add(jtfMessage, BorderLayout.CENTER);
         jtfMessage.addActionListener(actionSendMsg);
 
         jbSendMessage.addActionListener(actionSendMsg);
-        // при фокусе поле сообщения очищается
         jtfMessage.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
                 jtfMessage.setText("");
             }
         });
-        // при фокусе поле имя очищается
         jtfName.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -85,7 +80,6 @@ public class Form extends JFrame implements VisualInterface{
             }
         });
 
-        // добавляем обработчик события закрытия окна клиентского приложения
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -93,7 +87,6 @@ public class Form extends JFrame implements VisualInterface{
                 client.exitActions();
             }
         });
-        // отображаем форму
         setVisible(true);
 
     }

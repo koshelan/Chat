@@ -13,7 +13,6 @@ public class FileLogger implements Logger {
     @Override
     public void log(String text) {
         try (BufferedWriter br = new BufferedWriter(new FileWriter(fileName, true))) {
-            br.append('\n');
             br.append(text);
         } catch (Exception exception) {
             exception.printStackTrace();

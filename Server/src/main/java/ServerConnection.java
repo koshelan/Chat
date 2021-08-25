@@ -11,14 +11,14 @@ public class ServerConnection implements Runnable {
     private Socket clientSocket;
     private ObjectOutputStream outMessage;
     private ObjectInputStream inMessage;
-    private Server server;
+    //private Server server;
     private String nick;
 
-    public ServerConnection(Socket socket, Server server) {
+    public ServerConnection(Socket socket) {
 
         try {
             clients_count++;
-            this.server = server;
+            //this.server = server;
             this.clientSocket = socket;
             this.outMessage = new ObjectOutputStream(socket.getOutputStream());
             this.inMessage = new ObjectInputStream(socket.getInputStream());
@@ -35,19 +35,19 @@ public class ServerConnection implements Runnable {
         try {
             Log.getInstance().log("запущен поток с клиентом");
             nick = getUniqueNick();
-            server.addClient(nick, this);
-            while (true) {
+            Server.getInstance().addClient(nick, this);
+            //while (true) {
                 // сервер отправляет сообщение
-                server.sendMessageToAllClients(
-                        new Massage(server.RESERVED_SERVER_NICK, "Новый участник <" + nick + "> вошёл в чат!"));
-                server.sendMessageToAllClients(
-                        new Massage(server.RESERVED_SERVER_NICK, "Клиентов в чате = " + clients_count));
-                break;
-            }
+                Server.getInstance().sendMessageToAllClients(
+                        new Message(Server.RESERVED_SERVER_NICK, "Новый участник <" + nick + "> вошёл в чат!"));
+                Server.getInstance().sendMessageToAllClients(
+                        new Message(Server.RESERVED_SERVER_NICK, "Клиентов в чате = " + clients_count));
+            //    break;
+            //}
 
             while (true) {
                 // Если от клиента пришло сообщение
-                Massage clientMessage = (Massage) inMessage.readObject();
+                Message clientMessage = (Message) inMessage.readObject();
 
                 if (clientMessage.getText().equalsIgnoreCase("##session##end##")) {
                     System.out.println(clientMessage);
@@ -58,8 +58,8 @@ public class ServerConnection implements Runnable {
                 } else {
 
                     clientMessage.setDate(new Date());
-                    if (clientMessage.getSendToNick().equals("")) {
-                        server.sendMessageToAllClients(clientMessage);
+                    if (("").equals(clientMessage.getSendToNick())) {
+                        Server.getInstance().sendMessageToAllClients(clientMessage);
                     } else {
                         sendMessageToClient(clientMessage);
                     }
@@ -74,8 +74,7 @@ public class ServerConnection implements Runnable {
         }
     }
 
-    // отправляем сообщение
-    public void sendMsg(Massage msg) {
+    public void sendMsg(Message msg) {
         try {
             outMessage.writeObject(msg);
             outMessage.flush();
@@ -89,20 +88,20 @@ public class ServerConnection implements Runnable {
         return nick;
     }
 
-    private void sendMessageToClient(Massage clientMessage) {
-        if (server.getClientsNicks().contains(clientMessage.getSendToNick())) {
-            server.sendMassageTo(clientMessage);
+    private void sendMessageToClient(Message clientMessage) {
+        if (Server.getInstance().getClientsNicks().contains(clientMessage.getSendToNick())) {
+            Server.getInstance().sendMassageTo(clientMessage);
         } else {
-            sendMsg(new Massage(server.RESERVED_SERVER_NICK
+            sendMsg(new Message(Server.RESERVED_SERVER_NICK
                     , "получатель с ником <" + clientMessage.getSendToNick() + "> не найден"));
         }
     }
 
     private void changeNick(String clientNick) throws IOException, ClassNotFoundException {
-        if (server.getClientsNicks().contains(clientNick) || clientNick.equals(server.RESERVED_SERVER_NICK) ||
+        if (Server.getInstance().getClientsNicks().contains(clientNick) || clientNick.equals(Server.RESERVED_SERVER_NICK) ||
                 clientNick.isEmpty()) {
-            sendMsg(new Massage(
-                    server.RESERVED_SERVER_NICK,
+            sendMsg(new Message(
+                    Server.RESERVED_SERVER_NICK,
                     "Ваш новый <НИК> " + clientNick + " уже зарегистрирован в чате"));
             changedNickSuccessfully(getUniqueNick());
         } else {
@@ -111,22 +110,22 @@ public class ServerConnection implements Runnable {
     }
 
     private void changedNickSuccessfully(String clientNick) {
-        server.sendMessageToAllClients(
-                new Massage(
-                        server.RESERVED_SERVER_NICK,
+        Server.getInstance().sendMessageToAllClients(
+                new Message(
+                        Server.RESERVED_SERVER_NICK,
                         "участник " + nick + " переименовался и тепер " + clientNick));
-        server.changeClientNick(nick, clientNick);
+        Server.getInstance().changeClientNick(nick, clientNick);
         nick = clientNick;
     }
 
     private String getUniqueNick() throws IOException, ClassNotFoundException {
-        sendMsg(new Massage(server.RESERVED_SERVER_NICK, "Введите ваш уникальный <НИК>"));
+        sendMsg(new Message(Server.RESERVED_SERVER_NICK, "Введите ваш уникальный <НИК>"));
         while (true) {
-            String clientNick = ((Massage) inMessage.readObject()).getNick();
-            if (server.getClientsNicks().contains(clientNick) || clientNick.equals(server.RESERVED_SERVER_NICK)) {
+            String clientNick = ((Message) inMessage.readObject()).getNick();
+            if (Server.getInstance().getClientsNicks().contains(clientNick) || clientNick.equals(Server.RESERVED_SERVER_NICK)) {
                 sendMsg(
-                        new Massage(
-                                server.RESERVED_SERVER_NICK,
+                        new Message(
+                                Server.RESERVED_SERVER_NICK,
                                 "Такой <НИК> уже зарегистрирован в чате"
                         )
                 );
@@ -137,14 +136,13 @@ public class ServerConnection implements Runnable {
     }
 
     private void closeConnection() {
-        // удаляем клиента из списка
-        server.removeClient(this);
+        Server.getInstance().removeClient(this);
         clients_count--;
         if (nick != null) {
-            server.sendMessageToAllClients(
-                    new Massage(server.RESERVED_SERVER_NICK, "Клиент " + nick + " Покинул чат "));
-            server.sendMessageToAllClients(
-                    new Massage(server.RESERVED_SERVER_NICK, "Клиентов в чате = " + clients_count));
+            Server.getInstance().sendMessageToAllClients(
+                    new Message(Server.RESERVED_SERVER_NICK, "Клиент " + nick + " Покинул чат "));
+            Server.getInstance().sendMessageToAllClients(
+                    new Message(Server.RESERVED_SERVER_NICK, "Клиентов в чате = " + clients_count));
         }
     }
 

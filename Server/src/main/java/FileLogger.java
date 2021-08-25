@@ -13,8 +13,7 @@ final String fileName;
     @Override
     public void log(String text) {
         try (BufferedWriter br = new BufferedWriter(new FileWriter(fileName,true))) {
-            br.append('\n');
-            br.append(text);
+            br.append('\n'+text);
             System.out.print(text);
         }  catch (Exception exception) {
             exception.printStackTrace();

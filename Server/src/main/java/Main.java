@@ -10,7 +10,7 @@ public class Main {
         logger.log("Программа запущена : ");
         ServerSettings severSettings = ParseCSV.parseCSV(SERVER_SETTINGS_FILE);
         logger.log("Прочитаны настройки сервера: " + severSettings.toString());
-        new Server(severSettings);
+        new Server(severSettings).start();
         logger.log("FINISH");
 
     }

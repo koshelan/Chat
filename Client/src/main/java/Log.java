@@ -18,6 +18,6 @@ public class Log implements Logger {
 
     @Override
     public void log(String text) {
-        textLogger.log(formatForDateNow.format(new Date()) + "  " + text);
+        textLogger.log(formatForDateNow.format(new Date()) + "  " + text+'\n');
     }
 }

@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TerminalInterface extends JFrame implements VisualInterface {
 
+    private static final int PRINT_INPUT_MGS_EVERY = 7;
     Client client;
     boolean nickIsCorrect = false;
     private Queue<String> queue = new ConcurrentLinkedQueue<>();
@@ -24,7 +25,7 @@ public class TerminalInterface extends JFrame implements VisualInterface {
                 thread.start();
                 String m;
                 try {
-                    m = userText.get(7, TimeUnit.SECONDS);
+                    m = userText.get(PRINT_INPUT_MGS_EVERY, TimeUnit.SECONDS);
                 } finally {
                     thread.interrupt();
                 }

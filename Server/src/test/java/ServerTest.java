@@ -1,17 +1,27 @@
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
 
+import java.net.Socket;
 import java.util.HashSet;
 import java.util.Set;
 
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 class ServerTest {
+final String nick = "nick";
+final String otherNick = "otherNick";
+final String nickChanged = "Nick!";
+private static Server server=null;
+
+    @BeforeEach
+    void setUp() {
+        server = new Server(new ServerSettings("",0));
+    }
+
 
     @Test
     void sendMessageToAllClients() {
-        Server server = Mockito.mock(Server.class);
-
     }
 
     @Test
@@ -20,26 +30,53 @@ class ServerTest {
 
     @Test
     void addClient() {
+        ServerConnection client = Mockito.mock(ServerConnection.class);
+        when(client.getNick()).thenReturn(nick);
+        server.addClient(nick, client);
+        Assertions.assertEquals(1,server.getClientsNicks().size());
+        server.addClient(otherNick, client);
+        Assertions.assertEquals(true,server.getClientsNicks().contains(nick));
+        Assertions.assertEquals(true,server.getClientsNicks().contains(otherNick));
+        Assertions.assertEquals(2,server.getClientsNicks().size());
     }
 
     @Test
     void removeClient() {
-        Set<String> expectedSet = new HashSet<>();
-        Server server = Mockito.mock(Server.class);
-        Set clients = Mockito.mock(HashSet.class);
-        when(clients.)
+        ServerConnection client = Mockito.mock(ServerConnection.class);
+        when(client.getNick()).thenReturn(nick);
+        server.addClient(nick, client);
+        server.addClient(otherNick, client);
+        Assertions.assertEquals(true,server.getClientsNicks().contains(nick));
+        Assertions.assertEquals(true,server.getClientsNicks().contains(otherNick));
+        Assertions.assertEquals(2,server.getClientsNicks().size());
+        server.removeClient(client);
+        Assertions.assertEquals(false,server.getClientsNicks().contains(nick));
+        Assertions.assertEquals(true,server.getClientsNicks().contains(otherNick));
+        Assertions.assertEquals(1,server.getClientsNicks().size());
+
     }
 
     @Test
     void getClientsNicks() {
-        Set<String> expectedSet = new HashSet<>();
+        ServerConnection client = Mockito.mock(ServerConnection.class);
+        when(client.getNick()).thenReturn(nick);
+        server.addClient(nick, client);
+        server.addClient(otherNick, client);
+        Assertions.assertEquals(true,server.getClientsNicks().contains(nick));
+        Assertions.assertEquals(true,server.getClientsNicks().contains(otherNick));
+        Assertions.assertEquals(2,server.getClientsNicks().size());
 
-        Server server = Mockito.mock(Server.class);
-        when(server.getClientsNicks("172.123.12.19"))
-               .thenReturn(new Location("Moscow", Country.RUSSIA, null, 0));
     }
 
     @Test
     void changeClientNick() {
+        ServerConnection client = Mockito.mock(ServerConnection.class);
+        when(client.getNick()).thenReturn(nick);
+        server.addClient(nick, client);
+        server.addClient(otherNick, client);
+        server.changeClientNick(nick,nickChanged);
+        Assertions.assertEquals(false,server.getClientsNicks().contains(nick));
+        Assertions.assertEquals(true,server.getClientsNicks().contains(otherNick));
+        Assertions.assertEquals(true,server.getClientsNicks().contains(nickChanged));
     }
 }
