@@ -1,22 +1,21 @@
+import model.ServerSettings;
 import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
-
-import java.net.Socket;
-import java.util.HashSet;
-import java.util.Set;
+import service.Server;
+import service.ServerConnection;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 class ServerTest {
-final String nick = "nick";
-final String otherNick = "otherNick";
-final String nickChanged = "Nick!";
-private static Server server=null;
+    final String nick = "nick";
+    final String otherNick = "otherNick";
+    final String nickChanged = "Nick!";
+    private static Server server = null;
 
     @BeforeEach
     void setUp() {
-        server = new Server(new ServerSettings("",0));
+        server = new Server(new ServerSettings("", 0));
     }
 
 
@@ -33,11 +32,11 @@ private static Server server=null;
         ServerConnection client = Mockito.mock(ServerConnection.class);
         when(client.getNick()).thenReturn(nick);
         server.addClient(nick, client);
-        Assertions.assertEquals(1,server.getClientsNicks().size());
+        Assertions.assertEquals(1, server.getClientsNicks().size());
         server.addClient(otherNick, client);
-        Assertions.assertEquals(true,server.getClientsNicks().contains(nick));
-        Assertions.assertEquals(true,server.getClientsNicks().contains(otherNick));
-        Assertions.assertEquals(2,server.getClientsNicks().size());
+        Assertions.assertEquals(true, server.getClientsNicks().contains(nick));
+        Assertions.assertEquals(true, server.getClientsNicks().contains(otherNick));
+        Assertions.assertEquals(2, server.getClientsNicks().size());
     }
 
     @Test
@@ -46,13 +45,13 @@ private static Server server=null;
         when(client.getNick()).thenReturn(nick);
         server.addClient(nick, client);
         server.addClient(otherNick, client);
-        Assertions.assertEquals(true,server.getClientsNicks().contains(nick));
-        Assertions.assertEquals(true,server.getClientsNicks().contains(otherNick));
-        Assertions.assertEquals(2,server.getClientsNicks().size());
+        Assertions.assertEquals(true, server.getClientsNicks().contains(nick));
+        Assertions.assertEquals(true, server.getClientsNicks().contains(otherNick));
+        Assertions.assertEquals(2, server.getClientsNicks().size());
         server.removeClient(client);
-        Assertions.assertEquals(false,server.getClientsNicks().contains(nick));
-        Assertions.assertEquals(true,server.getClientsNicks().contains(otherNick));
-        Assertions.assertEquals(1,server.getClientsNicks().size());
+        Assertions.assertEquals(false, server.getClientsNicks().contains(nick));
+        Assertions.assertEquals(true, server.getClientsNicks().contains(otherNick));
+        Assertions.assertEquals(1, server.getClientsNicks().size());
 
     }
 
@@ -62,9 +61,9 @@ private static Server server=null;
         when(client.getNick()).thenReturn(nick);
         server.addClient(nick, client);
         server.addClient(otherNick, client);
-        Assertions.assertEquals(true,server.getClientsNicks().contains(nick));
-        Assertions.assertEquals(true,server.getClientsNicks().contains(otherNick));
-        Assertions.assertEquals(2,server.getClientsNicks().size());
+        Assertions.assertEquals(true, server.getClientsNicks().contains(nick));
+        Assertions.assertEquals(true, server.getClientsNicks().contains(otherNick));
+        Assertions.assertEquals(2, server.getClientsNicks().size());
 
     }
 
@@ -74,9 +73,9 @@ private static Server server=null;
         when(client.getNick()).thenReturn(nick);
         server.addClient(nick, client);
         server.addClient(otherNick, client);
-        server.changeClientNick(nick,nickChanged);
-        Assertions.assertEquals(false,server.getClientsNicks().contains(nick));
-        Assertions.assertEquals(true,server.getClientsNicks().contains(otherNick));
-        Assertions.assertEquals(true,server.getClientsNicks().contains(nickChanged));
+        server.changeClientNick(nick, nickChanged);
+        Assertions.assertEquals(false, server.getClientsNicks().contains(nick));
+        Assertions.assertEquals(true, server.getClientsNicks().contains(otherNick));
+        Assertions.assertEquals(true, server.getClientsNicks().contains(nickChanged));
     }
 }

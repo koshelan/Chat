@@ -1,14 +1,9 @@
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
+import logger.Logger;
+import logger.MsgLog;
 import org.junit.jupiter.api.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 class MsgLogTest {
     final String text1 = "abc";
@@ -28,7 +23,7 @@ class MsgLogTest {
         Logger l = new Logger() {
             @Override
             public void log(String text) {
-                System.out.print(text+" ");
+                System.out.print(text + " ");
             }
         };
         result = new MsgLog(l);
@@ -48,20 +43,20 @@ class MsgLogTest {
     void LogTest1() {
         MsgLog.getInstance().log(text1);
         String result = output.toString();
-        Assertions.assertEquals(text1+" ", output.toString());
+        Assertions.assertEquals(text1 + " ", output.toString());
     }
 
     @Test
     void LogTest2() {
         MsgLog.getInstance().log(text2);
-        Assertions.assertEquals(text2+ " ", output.toString());
+        Assertions.assertEquals(text2 + " ", output.toString());
 
     }
 
     @Test
     void LogTest3() {
         MsgLog.getInstance().log(text3);
-        Assertions.assertEquals((text3+" "), output.toString());
+        Assertions.assertEquals((text3 + " "), output.toString());
     }
 
     @Test

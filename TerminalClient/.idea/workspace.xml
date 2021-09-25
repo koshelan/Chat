@@ -5,101 +5,83 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1ac75fd-88f2-4642-9aa3-8fcf47b2ad40" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/Chat.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/.idea/Client.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/src/test/java/LogTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/src/test/java/MessageTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/src/test/java/MsgLogTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/target/classes/Form$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/target/classes/Form$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/target/classes/Form$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/target/classes/Form$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/target/classes/Form$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/target/classes/Form.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/target/classes/Message.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/target/classes/VisualInterface.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/target/surefire-reports/LogTests.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/target/surefire-reports/MessageTests.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/target/surefire-reports/MsgLogTest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/target/surefire-reports/TEST-LogTests.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/target/surefire-reports/TEST-MessageTests.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/target/surefire-reports/TEST-MsgLogTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/client_logs.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/file.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/target/classes/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/target/classes/clienInterface/Form$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/target/classes/clienInterface/Form$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/target/classes/clienInterface/Form$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/target/classes/clienInterface/Form$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/target/classes/clienInterface/Form$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/target/classes/clienInterface/Form.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/target/classes/clienInterface/VisualInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/target/classes/logger/FileLogger.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/target/classes/logger/Log.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/target/classes/logger/Logger.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/target/classes/logger/MsgLog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/target/classes/model/Message.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/target/classes/model/ServerSettings.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/target/classes/service/Client.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/target/classes/service/ParseCSV.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Client/target/test-classes/LogTests$1.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Client/target/test-classes/LogTests.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Client/target/test-classes/MessageTests.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Client/target/test-classes/MsgLogTest$1.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Client/target/test-classes/MsgLogTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/test/java/MessageTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/test/java/MsgLogTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/target/classes/Message.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/target/test-classes/LogTests$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/target/test-classes/LogTests.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/target/test-classes/MessageTests.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/target/test-classes/MsgLogTest$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/LogTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/MessageTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/MsgLogTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ConsoleInputReadTask.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Message.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/client_logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/client_logs.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/file.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/file.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/FileLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/FileLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/Form.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/Massage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/VisualInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/VisualInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/target/classes/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/target/classes/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/target/classes/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/target/classes/FileLogger.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/target/classes/FileLogger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/target/classes/Log.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/target/classes/Log.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/target/classes/Massage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/file.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/file.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/server_logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/server_logs.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/FileLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/FileLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/Log.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/target/classes/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/target/classes/logger/FileLogger.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/target/classes/logger/Log.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/target/classes/logger/Logger.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/target/classes/logger/MsgLog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/service/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/FileLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/logger/FileLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/clienInterface/Form.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logger/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logger/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/MsgLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logger/MsgLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/ParseCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/service/ParseCSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/ServerSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/model/ServerSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/VisualInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/clienInterface/VisualInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/test/java/LogTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/test/java/LogTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/test/java/MessageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/test/java/MessageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/test/java/MsgLogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/test/java/MsgLogTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/FileLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/logger/FileLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/logger/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/logger/Logger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/Massage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/ServerConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/model/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/MsgLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/logger/MsgLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/ParseCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/service/ParseCSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/service/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/service/ServerConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/ServerSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ServerSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/src/test/java/LogTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/test/java/LogTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/test/java/MassageTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/test/java/MessageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/test/java/MessageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/test/java/MsgLogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/test/java/MsgLogTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/src/test/java/ServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/test/java/ServerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/classes/FileLogger.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/FileLogger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/classes/Log.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/Log.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/classes/Massage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/classes/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/classes/ServerConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/ServerConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/surefire-reports/MassageTests.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/surefire-reports/TEST-MassageTests.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/test-classes/MassageTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client_logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/client_logs.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file.log" beforeDir="false" afterPath="$PROJECT_DIR$/file.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Massage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TerminalInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TerminalInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Massage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TerminalInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TerminalInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConsoleInputReadTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clientInterface/ConsoleInputReadTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FileLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logger/FileLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/logger/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/logger/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/model/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MsgLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/logger/MsgLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ParseCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ParseCSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ServerSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/model/ServerSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TerminalInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clientInterface/TerminalInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VisualInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clientInterface/VisualInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LogTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LogTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MessageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MessageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MsgLogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MsgLogTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

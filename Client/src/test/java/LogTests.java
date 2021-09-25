@@ -1,3 +1,5 @@
+import logger.Log;
+import logger.Logger;
 import org.junit.jupiter.api.*;
 
 import java.io.ByteArrayOutputStream;
